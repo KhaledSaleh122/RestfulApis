@@ -15,6 +15,7 @@ namespace DataInsertApi.Controllers
             _topicRepository = topicRepository;
         }
 
+        [HttpPost]
         public async Task<IActionResult> CreateTopic(TopicDto topic) {
             var handler = new TopicHandlers(_topicRepository);
             var result = await handler.CreateTopicHandler(topic);

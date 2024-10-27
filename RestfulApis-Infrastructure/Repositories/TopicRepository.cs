@@ -13,6 +13,7 @@ namespace RestfulApis_Infrastructure.Repositories
         public async Task CreateTopicAsync(Topic topic)
         {
             await _dbContext.Topics.AddAsync(topic);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }
