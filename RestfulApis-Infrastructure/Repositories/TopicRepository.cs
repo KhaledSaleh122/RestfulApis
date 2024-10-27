@@ -10,7 +10,7 @@ namespace RestfulApis_Infrastructure.Repositories
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
-        public async Task CreateTopic(Topic topic)
+        public async Task CreateTopicAsync(Topic topic)
         {
             await _dbContext.Topics.AddAsync(topic);
         }

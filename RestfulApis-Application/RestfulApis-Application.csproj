@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Restfulapis-Domain\RestfulApis-Domain.csproj" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Topic\" />
+    <ProjectReference Include="..\Restfulapis-Domain\RestfulApis-Domain.csproj" />
   </ItemGroup>
 
 </Project>
