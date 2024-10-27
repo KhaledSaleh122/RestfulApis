@@ -35,5 +35,16 @@ namespace RestfulApis_Application.TopicSpace
             await _topicRepository.CreateTopicAsync(topic);
             return new Result<Topic>(topic);
         }
+
+        public async Task<Result<Topic>> GetTopicByIdHandler(int id) {
+            var topic = await _topicRepository.FindTopicByIdAsync(id);
+            if (topic is null) {
+                var errors = new List<Error>() {
+                    new Error() { Name = "Id", Message = "The provided topic ID does not exist." }
+                };
+                return new Result<Topic>(new ErrorResult(404, errors));
+            }
+            return new Result<Topic>(topic);
+        }
     }
 }

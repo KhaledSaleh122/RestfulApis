@@ -1,4 +1,5 @@
-﻿using Restfulapis_Domain.Abstractions;
+﻿using Microsoft.EntityFrameworkCore;
+using Restfulapis_Domain.Abstractions;
 using Restfulapis_Domain.Entities;
 
 namespace RestfulApis_Infrastructure.Repositories
@@ -14,6 +15,22 @@ namespace RestfulApis_Infrastructure.Repositories
         {
             await _dbContext.Topics.AddAsync(topic);
             await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task<Topic?> FindTopicByIdAsync(int id)
+        {
+            return await _dbContext.Topics.FindAsync(id);
+        }
+
+        public async Task<(IEnumerable<Topic> Topics ,int TotalRecords)> FindTopics(int page = 1, int pageSize = 10)
+        {
+            var query = _dbContext.Topics;
+            var totalRecords = await query.CountAsync();
+            var topics = await query
+                .Take(page * pageSize)
+                .Skip((page - 1) * pageSize)
+                .ToListAsync();
+            return (topics,totalRecords);
         }
     }
 }
