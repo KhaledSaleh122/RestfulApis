@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RestfulApis_Application.TopicSpace;
 using Restfulapis_Domain.Abstractions;
@@ -19,6 +20,7 @@ namespace RetrieveDataApi.Controllers
         }
 
         [HttpGet("topicId")]
+        [Authorize]
         public async Task<IActionResult> GetTopicById(int topicId)
         {
             var handler = new TopicHandlers(_topicRepository, _validator);
@@ -31,6 +33,7 @@ namespace RetrieveDataApi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetTopics([FromQuery] int page = 1, [FromQuery] int pageSize = 10) {
             var handler = new TopicHandlers(_topicRepository, _validator);
             var result = await handler.GetTopicsHandler(page, pageSize);
