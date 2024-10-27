@@ -10,21 +10,17 @@ namespace RetrieveDataApi.Controllers
     [Route("api/topics")]
     public class TopicController : ControllerBase
     {
-        private readonly ITopicRepository _topicRepository;
-
-        private IValidator<TopicDto> _validator;
-        public TopicController(ITopicRepository topicRepository, IValidator<TopicDto> validator)
+        private readonly TopicHandlers _topicHandlers;
+        public TopicController(TopicHandlers topicHandlers)
         {
-            _topicRepository = topicRepository ?? throw new ArgumentNullException(nameof(topicRepository));
-            _validator = validator ?? throw new ArgumentNullException(nameof(validator));
+            _topicHandlers = topicHandlers ?? throw new ArgumentNullException(nameof(topicHandlers));
         }
 
         [HttpGet("topicId")]
         [Authorize]
         public async Task<IActionResult> GetTopicById(int topicId)
         {
-            var handler = new TopicHandlers(_topicRepository, _validator);
-            var result = await handler.GetTopicByIdHandler(topicId);
+            var result = await _topicHandlers.GetTopicByIdHandler(topicId);
             if (!result.IsSuccess)
             {
                 return StatusCode(result.ErrorResult!.StatusCode, result.ErrorResult);
@@ -35,8 +31,7 @@ namespace RetrieveDataApi.Controllers
         [HttpGet]
         [Authorize]
         public async Task<IActionResult> GetTopics([FromQuery] int page = 1, [FromQuery] int pageSize = 10) {
-            var handler = new TopicHandlers(_topicRepository, _validator);
-            var result = await handler.GetTopicsHandler(page, pageSize);
+            var result = await _topicHandlers.GetTopicsHandler(page, pageSize);
             return Ok(result.Value);
         }
     }
