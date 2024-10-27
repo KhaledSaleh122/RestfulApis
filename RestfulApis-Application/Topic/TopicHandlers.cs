@@ -46,5 +46,18 @@ namespace RestfulApis_Application.TopicSpace
             }
             return new Result<Topic>(topic);
         }
+
+        public async Task<Result<PageResult<Topic>>> GetTopicsHandler(int page = 1, int pageSize = 10) {
+            var pagination = new PaginationParameters(page,pageSize);
+            var (topics,totalRecords) = await _topicRepository.FindTopics(pagination.Page, pagination.pageSize);
+            return new Result<PageResult<Topic>>(
+                new PageResult<Topic>() { 
+                    Page = pagination.Page, 
+                    PageSize = pagination.pageSize, 
+                    Results = topics.ToList(), 
+                    TotalRecords = totalRecords 
+                }
+            );
+        }
     }
 }

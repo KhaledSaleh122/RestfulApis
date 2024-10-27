@@ -29,5 +29,12 @@ namespace RetrieveDataApi.Controllers
             }
             return Ok(result.Value);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetTopics([FromQuery] int page = 1, [FromQuery] int pageSize = 10) {
+            var handler = new TopicHandlers(_topicRepository, _validator);
+            var result = await handler.GetTopicsHandler(page, pageSize);
+            return Ok(result.Value);
+        }
     }
 }
