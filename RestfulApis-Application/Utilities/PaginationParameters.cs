@@ -1,4 +1,4 @@
-﻿namespace RestfulApis_Application
+﻿namespace RestfulApis_Application.Utilities
 {
     public class PaginationParameters(int page, int pageSize)
     {

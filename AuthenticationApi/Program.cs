@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Builder;
 using RestfulApis_Infrastructure.Services;
+using Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware<ExceptionHandlerMiddleware>();
 
 app.MapControllers();
 

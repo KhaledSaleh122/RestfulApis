@@ -1,6 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace RestfulApis_Application
+﻿namespace RestfulApis_Application.Utilities
 {
     public class Result<TValue>
     {

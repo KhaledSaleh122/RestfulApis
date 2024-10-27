@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using RestfulApis_Application.Utilities;
 using Restfulapis_Domain.Abstractions;
 using Restfulapis_Domain.Entities;
 

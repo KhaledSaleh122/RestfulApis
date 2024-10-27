@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace RestfulApis_Application
+namespace RestfulApis_Application.Utilities
 {
     public class PageResult<T>
     {
