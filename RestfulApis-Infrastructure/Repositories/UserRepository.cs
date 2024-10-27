@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Restfulapis_Domain.Abstractions;
 using Restfulapis_Domain.Entities;
-
 namespace RestfulApis_Infrastructure.Repositories
 {
     public class UserRepository : IUserRepository
@@ -12,7 +11,7 @@ namespace RestfulApis_Infrastructure.Repositories
         }
         public Task<bool> CheckPasswordSignInAsync(User user, string password)
         {
-            return Task.FromResult(user.Password == password);
+            return Task.FromResult(BCrypt.Net.BCrypt.Verify(password,user.Hash));
         }
 
         public Task<User?> FindByNameAsync(string name)

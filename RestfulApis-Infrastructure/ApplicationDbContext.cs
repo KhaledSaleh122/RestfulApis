@@ -19,8 +19,8 @@ namespace RestfulApis_Infrastructure
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<User>().HasData(
-                new User() { Id = 1, Email="a@gmail.com",  Username="abed", Password="abed123" },
-                new User() { Id = 2, Email="b@gmail.com",  Username="ibrahim", Password="ibrahim123" }
+                new User() { Id = 1, Email="a@gmail.com",  Username="abed", Hash= BCrypt.Net.BCrypt.HashPassword("abed123") },
+                new User() { Id = 2, Email="b@gmail.com",  Username="ibrahim", Hash= BCrypt.Net.BCrypt.HashPassword("ibrahim123") }
             );
         }
     }
