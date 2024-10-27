@@ -14,7 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\RestfulApis-Application\RestfulApis-Application.csproj" />
     <ProjectReference Include="..\RestfulApis-Infrastructure\RestfulApis-Infrastructure.csproj" />
-    <ProjectReference Include="..\RetrieveDataApi\RetrieveDataApi.csproj" />
+    <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 
 </Project>

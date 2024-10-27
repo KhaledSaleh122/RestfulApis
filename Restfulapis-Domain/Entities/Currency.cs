@@ -11,7 +11,7 @@ namespace Restfulapis_Domain.Entities
         public string Base { get; set; }
 
         [JsonPropertyName("date")]
-        public DateTime Date { get; set; }
+        public DateOnly Date { get; set; }
 
         [JsonPropertyName("rates")]
         public Dictionary<string, decimal> Rates { get; set; } = new Dictionary<string, decimal>();
