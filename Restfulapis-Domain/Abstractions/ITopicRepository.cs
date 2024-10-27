@@ -4,6 +4,6 @@ namespace Restfulapis_Domain.Abstractions
 {
     public interface ITopicRepository
     {
-        public Task CreateTopic(Topic topic);
+        public Task CreateTopicAsync(Topic topic);
     }
 }
