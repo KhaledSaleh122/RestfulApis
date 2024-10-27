@@ -10,6 +10,7 @@ namespace RestfulApis_Infrastructure.Services
         {
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<ITopicRepository, TopicRepository>();
             return services;
         }
     }
