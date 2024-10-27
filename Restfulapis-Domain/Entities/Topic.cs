@@ -1,6 +1,6 @@
 ﻿namespace Restfulapis_Domain.Entities
 {
-    public class Topic
+    public sealed class Topic
     {
         public int Id { get; set; }
         public string Name { get; set; }
