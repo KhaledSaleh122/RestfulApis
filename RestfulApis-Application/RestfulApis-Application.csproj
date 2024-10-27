@@ -11,4 +11,8 @@
     <ProjectReference Include="..\Restfulapis-Domain\RestfulApis-Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Topic\" />
+  </ItemGroup>
+
 </Project>
