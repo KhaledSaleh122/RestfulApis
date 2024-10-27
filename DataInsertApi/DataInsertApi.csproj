@@ -14,4 +14,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RestfulApis-Infrastructure\RestfulApis-Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

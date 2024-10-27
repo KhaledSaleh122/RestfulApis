@@ -2,11 +2,11 @@
 
 namespace RestfulApis_Application.User
 {
-    public class UserCommands
+    public class UserHandlers
     {
         private readonly IUserRepository _userRepository;
         private readonly ITokenService _tokenService;
-        public UserCommands(IUserRepository userRepository, ITokenService tokenService)
+        public UserHandlers(IUserRepository userRepository, ITokenService tokenService)
         {
             _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
             _tokenService = tokenService ?? throw new ArgumentNullException(nameof(tokenService));

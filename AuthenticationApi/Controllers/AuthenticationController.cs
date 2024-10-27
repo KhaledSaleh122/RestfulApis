@@ -19,7 +19,7 @@ namespace RestfulApis_Presentation.Controllers
 
         [HttpPost("/login")]
         public async Task<IActionResult> SignIn(UserDto user) {
-            var command = new UserCommands(_userRepository, _tokenService);
+            var command = new UserHandlers(_userRepository, _tokenService);
             var result = await command.SignInHandler(user);
             if (!result.IsSuccess) {
                 return StatusCode(result.ErrorResult!.StatusCode, result.ErrorResult);
