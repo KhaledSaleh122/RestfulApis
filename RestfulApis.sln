@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestfulApis-Domain", "Restf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestfulApis-Infrastructure", "RestfulApis-Infrastructure\RestfulApis-Infrastructure.csproj", "{566D1511-9004-410B-BD46-A8A56384D5CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestfulApis-Application", "RestfulApis-Application\RestfulApis-Application.csproj", "{56C9C301-61DC-4F8A-B2E3-E749CD6868BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{566D1511-9004-410B-BD46-A8A56384D5CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{566D1511-9004-410B-BD46-A8A56384D5CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{566D1511-9004-410B-BD46-A8A56384D5CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56C9C301-61DC-4F8A-B2E3-E749CD6868BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56C9C301-61DC-4F8A-B2E3-E749CD6868BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56C9C301-61DC-4F8A-B2E3-E749CD6868BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56C9C301-61DC-4F8A-B2E3-E749CD6868BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
