@@ -8,6 +8,7 @@ namespace RestfulApis_Infrastructure.Services
         public static IServiceCollection AddMainServices(this IServiceCollection services,IConfiguration configuration) {
             services.AddDBContextConfiguration(configuration);
             services.AddServices();
+            services.AddValidators();
             return services;
         }
     }

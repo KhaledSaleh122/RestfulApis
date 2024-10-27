@@ -19,7 +19,8 @@ namespace RetrieveDataApi.Controllers
         }
 
         [HttpGet("topicId")]
-        public async Task<IActionResult> GetTopicById(int topicId) {
+        public async Task<IActionResult> GetTopicById(int topicId)
+        {
             var handler = new TopicHandlers(_topicRepository, _validator);
             var result = await handler.GetTopicByIdHandler(topicId);
             if (!result.IsSuccess)

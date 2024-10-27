@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestfulApis-Application", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataInsertApi", "DataInsertApi\DataInsertApi.csproj", "{1592301E-D7B0-4D5E-B858-2D9C75F750E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetrieveDataApi", "RetrieveDataApi\RetrieveDataApi.csproj", "{89B26D4C-1D13-47B8-816B-EF38069325BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1592301E-D7B0-4D5E-B858-2D9C75F750E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1592301E-D7B0-4D5E-B858-2D9C75F750E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1592301E-D7B0-4D5E-B858-2D9C75F750E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89B26D4C-1D13-47B8-816B-EF38069325BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89B26D4C-1D13-47B8-816B-EF38069325BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89B26D4C-1D13-47B8-816B-EF38069325BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89B26D4C-1D13-47B8-816B-EF38069325BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
