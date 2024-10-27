@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RestfulApis_Application.TopicSpace;
 using Restfulapis_Domain.Abstractions;
@@ -19,6 +20,7 @@ namespace DataInsertApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> CreateTopic(TopicDto topic) {
             var handler = new TopicHandlers(_topicRepository, _validator);
             var result = await handler.CreateTopicHandler(topic);
